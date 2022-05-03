@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "image": "https://i.pinimg.com/564x/19/40/05/19400565d1b98d6daea7a22bf2118b8a.jpg",
+      "fname": "Elena",
+      "lname": "Gilbert",
+      "email": "elina1234@gmail.com",
+      "phone": "8789456214",
+      "age": 25,
+      "state": "Maharashtra",
+      "country": "India",
+      "address": "Mumbai",
+      "hobies": "Football, reading, sweaming",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

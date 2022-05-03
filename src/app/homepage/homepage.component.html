@@ -1,0 +1,387 @@
+<div class="homepage" *ngIf="showHomepage && !showUserprofile">
+
+    <div class="site-top" id="top">
+        <div class="site-top-overlay"></div>
+        <div class="site-header">
+            <div class="container">
+                <a href="#" class="site-brand">
+                    <img src="/assets/images/demologo.png" alt="Alpines template">
+                </a>
+                <div class="main-navigation">
+                    <a href="#" class="visible-xs toggle-menu"><i class="fa fa-bars"></i></a>
+                    <nav class="site-navigation">
+                        <ul>
+                            <li><a href="">HOME</a></li>
+                            <li><a href="#posts">ABOUT US</a></li>
+                            <li><a href="#cta">JOBS</a></li>
+                            <li><a href="#services">CLIENTS</a></li>
+                            <li><a (click)="showUser()" href="#posts">USERS</a></li>
+                            <li><a href="#cta">CONTACT US</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- .main-navigation -->
+            </div>
+
+        </div>
+        <!-- .site-header -->
+
+        <div class="welcome-text">
+            <div class="container text-center white-text">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <h1>I'm looking for...</h1>
+
+                    <div>
+
+                        <fieldset class="col-md-10 col-sm-6">
+                            <input type="text" class="form-control" id="your-name" placeholder="Enter a Job Description">
+                        </fieldset>
+
+                        <a href="#" class="button default"><i class="bi bi-search"></i>
+                    Search</a>
+                    </div>
+                    <div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1" style="color:white">Full time</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1" style="color:white">Part time/Casual/Freelance</label>
+                        </div>
+                        <div>
+                            <fieldset class="col-md-4 col-sm-6 m-6">
+                                <select class="form-select fselect" aria-label="Default select example" style="margin: -28px 0px 0px 416px;padding:6px;
+                        ">
+                        <option selected>Select your location</option>
+                        <option value="1">Mumbai</option>
+                        <option value="2">Pune</option>
+                        <option value="3">Dellhi</option>
+                      </select>
+                            </fieldset>
+                        </div>
+
+                        <a href="#" class="button default butregister" data-bs-toggle="modal" data-bs-target="#myModal">
+                        Register</a>
+                    </div>
+
+
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>&nbsp;
+                    <li data-target="#myCarousel" data-slide-to="1"></li>&nbsp;
+                    <li data-target="#myCarousel" data-slide-to="2"></li>&nbsp;
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- .site-top -->
+
+
+
+
+    <section id="posts" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class=" text-center" style="text-align:center">
+                    <h3>We're leaders in</h3>
+                    <h2>Creative Digital Recruitment</h2>
+                    <span class="underline" style="background-color:skyblue"></span>
+                    <h4>Based in Surry Hills, the creative hub of Sydney we are surrounded by creativity and that reflects on the type of jobs we recruit for. </h4><br><br>
+
+                    <button type="button" class="btn btn-outline-info find"><b>FIND OUT MORE ABOUT US!</b></button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+<div class="userprofile" *ngIf="showUserprofile && !showHomepage">
+    <div class="site-header" style="background-color:rgb(72, 177, 219)">
+        <div class="container">
+            <a href="#" class="site-brand">
+                <img src="/assets/images/demologo.png" alt="Alpines template">
+            </a>
+            <div class="main-navigation">
+                <a href="#" class="visible-xs toggle-menu"><i class="fa fa-bars"></i></a>
+                <nav class="site-navigation">
+                    <ul>
+                        <li><a (click)="showHome()" href="#services">HOME</a></li>
+                        <li><a href="#posts">ABOUT US</a></li>
+                        <li><a href="#cta">JOBS</a></li>
+                        <li><a href="#services">CLIENTS</a></li>
+                        <li><a href="#posts">EMPLOYERS</a></li>
+                        <li><a href="#cta">CONTACT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- .main-navigation -->
+        </div>
+
+    </div>
+
+    <section>
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card-registration my-4">
+
+                        <div class="row g-0" *ngFor="let data of UserData; index as i">
+                            <div class="col-xl-4 d-none d-xl-block">
+                                <img [src]="data.image" height="325" width="310" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /><br>
+                                <input type="file" id="img" name="img" accept="image/*">
+                                <div>
+
+                                    <button type="file" id="img" name="img" accept="image/*" class=" btn btn-warning ">Edit photo</button>
+                                    <button type="button" (click)="onEdit(data)" class=" btn btn-warning mx-4" data-bs-toggle="modal" data-bs-target="#myModal">Edit profile</button>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xl-8 ">
+                                <div class="card-body p-md-5 text-black " *ngFor="let data of UserData; index as i">
+
+
+                                    <div class="row ">
+                                        <div class="col-md-6 mb-4 ">
+                                            <div class="form-outline ">
+                                                <p>I'm {{data.fname}} {{data.lname}} and I'm above {{data.age}} years and you can send your emails to {{data.email}}. I live in the state of {{data.state}}, {{data.country}}. I like to play {{data.hobies}}.
+                                                    And please send me newsletter. Please reach out to me on my phone number {{data.phone}}.</p>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div>
+
+                                        <!-- <button type="button " class="btn btn-outline-secondary ">Cancel</button> -->
+                                        <button type="submit " (click)="onEdit(data)" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#myModal">Agree</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+
+<section id="cta">
+    <div class="container">
+        <span class="decoration-header decoration-2"></span>
+        <div class="inside accent page-section">
+            <div class="row">
+                <div class="col-md-12 text-center white-text">
+                    <!-- <h2>Stay In Touch</h2> -->
+                    <p style="color:white">Subscribe to our job seeker mailing list.</p>
+                </div>
+            </div>
+            <div class="row">
+                <form action="#" method="post" class="cta-form" id="templatemo-subscribe">
+                    <!-- <fieldset class="col-md-offset-3 col-md-4">
+                        <input type="email" id="cta-email" placeholder="Enter your email here...">
+                    </fieldset> -->
+                    <div class="input-group">
+
+                        <input type="text" class="form-control" placeholder="Enter your email address" aria-label="Username" aria-describedby="addon-wrapping">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer class="site-footer">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="social-icons">
+                    <li>
+                        <a href="#" class="fa fa-facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-behance"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-google-plus"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa fa-rss"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright-text">Copyright © 2014 Two Bytes Consulting <b>Terms and Policies.</b></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Register</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <section>
+                    <div class="container h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col">
+                                <div class="card card-registration my-4">
+                                    <form [formGroup]="UserForm">
+                                        <div class="row g-0">
+                                            <div class="col-xl-3 d-none d-xl-block">
+                                                <img [src]="url" height="325" width="310" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /><br>
+                                                <input type="file" (change)="onSelectFile($event)" id="img" name="img" formControlName="image" accept="image/*">
+                                                <input type="text " id="projectinput1 " class="form-control image" name="image" formControlName="image" placeholder="Add image url" value>
+                                            </div>
+                                            <div class="col-xl-8">
+                                                <div class="card-body p-md-5 text-black" style="margin:0px -60px 0px 114px">
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-4">
+                                                            <div class="form-outline">
+                                                                <input type="text" class="form-control" formControlName="fname" id="your-name" placeholder="First Name">
+                                                                <small *ngIf="UserForm.get('fname').invalid && UserForm.get('fname').touched" class="text-danger">* First Name is required</small>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-4">
+                                                            <div class="form-outline">
+                                                                <input type="text" class="form-control" formControlName="lname" id="your-name" placeholder="Last Name">
+                                                                <small *ngIf="UserForm.get('lname').invalid && UserForm.get('lname').touched" class="text-danger">*Last Name is required</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" class="form-control" formControlName="email" id="your-email" placeholder="Email">
+                                                        <small *ngIf="UserForm.get('email').invalid && UserForm.get('email').touched" class="text-danger">*Email is required</small>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" class="form-control" formControlName="phone" id="your-phone" placeholder="(541)754-3010">
+                                                        <small *ngIf="UserForm.get('phone').invalid && UserForm.get('phone').touched" class="text-danger">*Phone number is required</small>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        Age &nbsp;&nbsp;&nbsp;
+                                                        <!-- <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                                                    <div id="SelectValue"></div> -->
+                                                        <mat-slider [(ngModel)]="myModel" formControlName="age"></mat-slider>
+                                                        <div>{{myModel}}</div>
+
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+
+
+                                                        <select class="form-select" formControlName="state" aria-label="Default select example">
+                                                        <option value="" selected>State</option>
+                                                        <option [ngValue]="state" *ngFor="let state of states">{{state}}</option>
+                                                       
+                                                      </select>
+
+                                                        <small *ngIf="UserForm.get('state').invalid && UserForm.get('state').touched" class="text-danger">*State is required</small>
+
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+
+                                                        <select class="form-select" formControlName="country" aria-label="Default select example">
+                                                        <option value="" selected>Country</option>
+                                                        <option [ngValue]="country" *ngFor="let country of countries" >{{country}}</option>
+                                                       
+                                                      </select>
+                                                        <small *ngIf="UserForm.get('country').invalid && UserForm.get('country').touched" class="text-danger">*Country is required</small>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" class="form-control" formControlName="address" id="your-name" placeholder="Address">
+                                                        <small *ngIf="UserForm.get('address').invalid && UserForm.get('address').touched" class="text-danger">*Address is required</small>
+                                                    </div>
+
+                                                    <div class="form-outline mb-4">
+                                                        <input type="text" class="form-control" formControlName="hobies" id="your-name" placeholder="Hobbies">
+                                                        <small *ngIf="UserForm.get('hobies').invalid && UserForm.get('hobies').touched" class="text-danger">*Address is required</small>
+                                                    </div>
+
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <label class="form-check-label" for="exampleCheck1">Subscribe to newsletter</label>
+                                                    </div>
+                                                    <br>
+                                                    <div>
+
+                                                        <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                                        <button type="submit" *ngIf="showAddbutton" (click)="postUserDetails()" class="btn btn-info mx-3" data-bs-dismiss="modal">Submit</button>
+
+                                                        <button type="submit" *ngIf="showUpdatebutton" (click)="updateUserDetails()" class="btn btn-primary mx-3">Update</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+            </div>
+
+            <!-- Modal footer -->
+
+        </div>
+    </div>
+</div>
