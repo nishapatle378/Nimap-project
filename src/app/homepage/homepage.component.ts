@@ -44,7 +44,8 @@ this.getAllUser();
       state:['',Validators.required],
       country:['',Validators.required],
       address:['',Validators.required],
-      hobies:['',Validators.required]
+      hobies:['',Validators.required],
+      checkbox:['',Validators.required]
       
     })
   }

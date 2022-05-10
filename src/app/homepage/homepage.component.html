@@ -144,7 +144,7 @@
 
 
                             <div class="col-xl-8 ">
-                                <div class="card-body p-md-5 text-black " *ngFor="let data of UserData; index as i">
+                                <div class="card-body p-md-5 text-black ">
 
 
                                     <div class="row ">
@@ -162,7 +162,7 @@
                                     <div>
 
                                         <!-- <button type="button " class="btn btn-outline-secondary ">Cancel</button> -->
-                                        <button type="submit " (click)="onEdit(data)" class="btn btn-success mx-3 " data-bs-toggle="modal" data-bs-target="#myModal">Agree</button>
+                                        <button type="submit " class="btn btn-success mx-3 ">I Agree</button>
                                     </div>
 
                                 </div>
@@ -274,7 +274,7 @@
                                             <div class="col-xl-3 d-none d-xl-block">
                                                 <img [src]="url" height="325" width="310" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /><br>
                                                 <input type="file" (change)="onSelectFile($event)" id="img" name="img" formControlName="image" accept="image/*">
-                                                <input type="text " id="projectinput1 " class="form-control image" name="image" formControlName="image" placeholder="Add image url" value>
+                                                <input type="text " id="projectinput1 " class="form-control image" name="image" formControlName="image" placeholder="Add image url" value><br>
                                                 <small *ngIf="UserForm.get('image').invalid && UserForm.get('image').touched" class="text-danger">* Image is required</small>
                                             </div>
                                             <div class="col-xl-8">
@@ -301,12 +301,12 @@
 
 
                                                     <div class="form-outline mb-4">
-                                                        <input type="text" class="form-control" formControlName="email" id="your-email" placeholder="Email">
+                                                        <input type="email" class="form-control" formControlName="email" id="your-email" placeholder="Email">
                                                         <small *ngIf="UserForm.get('email').invalid && UserForm.get('email').touched" class="text-danger">*Email is required</small>
                                                     </div>
 
                                                     <div class="form-outline mb-4">
-                                                        <input type="text" class="form-control" formControlName="phone" id="your-phone" placeholder="(541)754-3010">
+                                                        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="10" class="form-control" formControlName="phone" id="your-phone" placeholder="(541)754-3010">
                                                         <small *ngIf="UserForm.get('phone').invalid && UserForm.get('phone').touched" class="text-danger">*Phone number is required</small>
                                                     </div>
 
@@ -353,8 +353,9 @@
                                                     </div>
 
                                                     <div class="mb-3 form-check">
-                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="checkbox">
                                                         <label class="form-check-label" for="exampleCheck1">Subscribe to newsletter</label>
+
                                                     </div>
                                                     <br>
                                                     <div>

@@ -12,6 +12,20 @@
       "address": "Mumbai",
       "hobies": "Football, reading, sweaming",
       "id": 1
+    },
+    {
+      "image": "https://i.pinimg.com/originals/3d/fa/1d/3dfa1dc2114a976fd0b8d82a334e7df5.jpg",
+      "fname": "Swara",
+      "lname": "Rajput",
+      "email": "swarar@gmail.com",
+      "phone": 7845122222,
+      "age": 26,
+      "state": "Maharashtra",
+      "country": "India",
+      "address": "Mumbai",
+      "hobies": "Football, cricket, sweaming",
+      "checkbox": true,
+      "id": 2
     }
   ],
   "comments": [
