@@ -275,6 +275,7 @@
                                                 <img [src]="url" height="325" width="310" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" /><br>
                                                 <input type="file" (change)="onSelectFile($event)" id="img" name="img" formControlName="image" accept="image/*">
                                                 <input type="text " id="projectinput1 " class="form-control image" name="image" formControlName="image" placeholder="Add image url" value>
+                                                <small *ngIf="UserForm.get('image').invalid && UserForm.get('image').touched" class="text-danger">* Image is required</small>
                                             </div>
                                             <div class="col-xl-8">
                                                 <div class="card-body p-md-5 text-black" style="margin:0px -60px 0px 114px">
@@ -359,7 +360,7 @@
                                                     <div>
 
                                                         <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                                        <button type="submit" *ngIf="showAddbutton" (click)="postUserDetails()" class="btn btn-info mx-3" data-bs-dismiss="modal">Submit</button>
+                                                        <button type="submit" *ngIf="showAddbutton" (click)="postUserDetails()" [disabled]="!UserForm.valid" class="btn btn-info mx-3" data-bs-dismiss="modal">Submit</button>
 
                                                         <button type="submit" *ngIf="showUpdatebutton" (click)="updateUserDetails()" class="btn btn-primary mx-3">Update</button>
                                                     </div>
